@@ -4,7 +4,7 @@
 (defn common [& body]
   (html5
     [:head
-     [:title "Welcome to nataliedee"]
+     [:title "Natalie Dee Mobile"]
      [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
      (include-css "/css/screen.css")]
     [:body
