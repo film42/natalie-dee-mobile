@@ -6,6 +6,8 @@
     [:head
      [:title "Natalie Dee Mobile"]
      [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
+     [:link {:rel "apple-touch-icon" :href "/img/ios-icon.png"}]
+
      (include-css "/css/screen.css")]
     [:body
       [:header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav
