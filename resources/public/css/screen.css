@@ -11,7 +11,11 @@ body {
 }
 
 .images li {
-  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.images li:last-child {
+  padding-bottom: 0;
 }
 
 .images img {
@@ -23,6 +27,14 @@ footer {
   padding: 20px 10px;
 }
 
+section {
+  background-color: #ccc;
+  padding: 0 0 10px 0;
+}
+
+.btn-date {
+  margin: 4px;
+}
 
 
 

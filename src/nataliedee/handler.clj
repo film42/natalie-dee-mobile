@@ -5,7 +5,8 @@
             [hiccup.middleware :refer [wrap-base-url]]
             [compojure.handler :as handler]
             [compojure.route :as route]
-            [nataliedee.routes.home :refer [home-routes]]))
+            [nataliedee.routes.home :refer [home-routes]]
+            [nataliedee.routes.archive :refer [archive-routes]]))
 
 (defn init []
   (println "nataliedee is starting"))
@@ -18,7 +19,7 @@
   (route/not-found "Not Found"))
 
 (def app
-  (-> (routes home-routes app-routes)
+  (-> (routes home-routes archive-routes app-routes)
       (handler/site)
       (wrap-base-url)))
 

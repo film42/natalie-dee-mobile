@@ -13,7 +13,18 @@
       [:header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav
         [:div.container
           [:div.navbar-header
-            [:a.navbar-brand "Natalie Dee Mobile"]]]]
+            [:a.navbar-brand {:href "/"}"NATALIE DEE"]]]]
+      [:footer
+        [:div.container
+          [:div.message
+            [:center
+             [:a.btn.btn-success
+                {:href "/"}
+                "More Random!" ]
+             "&nbsp;&nbsp;&nbsp;"
+             [:a.btn.btn-warning
+                {:href "/archives/"}
+                "Pick a Month" ]]]]]
 
       body
 
@@ -22,6 +33,10 @@
           [:div.message
             [:center
              [:a.btn.btn-success
-                {:onClick "window.location.href=window.location.href"}
-                "Tap to load more!" ]]]]]
+                {:href "/"}
+                "More Random!" ]
+             "&nbsp;&nbsp;&nbsp;"
+             [:a.btn.btn-warning
+                {:href "/archives/"}
+                "Pick a Month" ]]]]]
      ]))

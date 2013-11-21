@@ -15,8 +15,8 @@
       (image (-> (images i) :attrs :src)))))
 
 (defn home []
-  (layout/common [:div.images (unordered-list (nd-template))]
-                 ))
+  (layout/common
+    [:div.images (unordered-list (nd-template))]))
 
 (defroutes home-routes
   (GET "/" [] (home)))
