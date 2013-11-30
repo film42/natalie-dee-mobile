@@ -6,6 +6,7 @@
             [compojure.handler :as handler]
             [compojure.route :as route]
             [nataliedee.routes.home :refer [home-routes]]
+            [nataliedee.routes.random :refer [random-routes]]
             [nataliedee.routes.archive :refer [archive-routes]]))
 
 (defn init []
@@ -19,7 +20,7 @@
   (route/not-found "Not Found"))
 
 (def app
-  (-> (routes home-routes archive-routes app-routes)
+  (-> (routes home-routes random-routes archive-routes app-routes)
       (handler/site)
       (wrap-base-url)))
 
