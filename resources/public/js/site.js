@@ -29,8 +29,9 @@ $(window).ready(function() {
   $(window).scroll(function() {
 
     var scrollDist = $(document).height() - $(window).scrollTop();
+    var path = window.location.pathname;
 
-    if(scrollDist < 1000 && updating == false) {
+    if(scrollDist < 1000 && updating == false && path == '/') {
 
       // Ensure not massive surge
       updating = true;

@@ -50,7 +50,7 @@
         [:div.message
           [:center [:h3 month " " year]]]]]
 
-    [:div.images (unordered-list (nd-template year month))]))
+    [:div.archived-images (unordered-list (nd-template year month))]))
 
 (defroutes archive-routes
   (GET "/archives/" [] (pick-month))
