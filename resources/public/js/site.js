@@ -1,5 +1,8 @@
 $(window).ready(function() {
 
+  var MAX_SCROLL = 5;
+  var CURRENT_SCROLL_LEVEL = 0;
+
   var updating = false;
 
   var appendComics = function() {
@@ -12,7 +15,8 @@ $(window).ready(function() {
       $('.loading').addClass('hidden');
 
       // Allow more updates!
-      updating = false;
+      if(CURRENT_SCROLL_LEVEL < MAX_SCROLL)
+        updating = false;
 
     });
 
@@ -26,6 +30,7 @@ $(window).ready(function() {
 
       // Ensure not massive surge
       updating = true;
+      CURRENT_SCROLL_LEVEL++;
       $('.loading').removeClass('hidden');
 
       // Loading comics
