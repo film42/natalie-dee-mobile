@@ -12,11 +12,15 @@ $(window).ready(function() {
       newComics = $(data).children();
 
       $('.images ul').append(newComics);
-      $('.loading').addClass('hidden');
 
       // Allow more updates!
-      if(CURRENT_SCROLL_LEVEL < MAX_SCROLL)
+      if(CURRENT_SCROLL_LEVEL < MAX_SCROLL) {
+        $('.loading').addClass('hidden');
         updating = false;
+      } else {
+        $('.loading p').text("Want more? Click 'More Random!' below!");
+        $('.loading img').addClass('hidden');
+      }
 
     });
 
