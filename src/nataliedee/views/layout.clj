@@ -10,7 +10,7 @@
 
      (include-css "/css/screen.css")
      (include-js  "/js/jquery.js")
-     (include-js  "/js/site.js")
+;     (include-js  "/js/site.js")
      (include-js  "/js/ga.js")]
     [:body
       [:header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav
@@ -49,4 +49,6 @@
              [:a.btn.btn-warning
                 {:href "/archives/"}
                 "Pick a Month" ]]]]]
+
+      (include-js  "/js/main.js")
      ]))
