@@ -1,7 +1,7 @@
 (defproject nataliedee "0.1.0-SNAPSHOT"
   :description "Natalie Dee Mobile site"
   :url "http://example.com/FIXME"
-  ;; :jvm-opts ["-Xmx1g"]
+  ;:jvm-opts ["-Xmx1g"]
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/clojurescript "0.0-2080"]
                  [compojure "1.1.5"]
@@ -29,6 +29,6 @@
         ; (See the ClojureScript compiler documentation for details.)
         :compiler {
           :output-to "resources/public/js/main.js"  ; default: target/cljsbuild-main.js
-          :optimizations :simple
+          :optimizations :advanced
           :pretty-print false
           :externs ["externs/jquery.js"]}}]})
