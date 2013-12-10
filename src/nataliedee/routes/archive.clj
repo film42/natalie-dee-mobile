@@ -5,8 +5,17 @@
   (:use net.cgrand.enlive-html)
   (:import java.net.URL))
 
+(defn -get-month-comics-ua []
+  (with-open [inputstream (-> (java.net.URL. "http://www.nataliedee.com/index.php")
+                            .openConnection
+                            (doto (.setRequestProperty "User-Agent"
+                                                       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"))
+                            .getContent)]
+
+  (html-resource inputstream)))
+
 (defn get-month-comics [year month]
-  (-> (str "http://www.nataliedee.com/archives/" year "/" month "/") URL. html-resource
+  (-> (-get-month-comics-ua)
     (select [:div.arcDayComic :img.comic])))
 
 (defn nd-template [year month]
