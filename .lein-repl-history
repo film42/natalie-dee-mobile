@@ -1,0 +1,22 @@
+  (use net.cgrand.enlive-html)
+  (use `net.cgrand.enlive-html)
+(defn -get-random-comics-ua [x]
+  (with-open [inputstream (-> (java.net.URL. x)
+                            .openConnection
+                            (doto (.setRequestProperty "User-Agent"
+                                                       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"))
+                            .getContent)]
+    
+  (html-resource inputstream)))
+(-get-random-comics-ua "http://codingrockets.com")
+(select [img] (-get-random-comics-ua "http://codingrockets.com"))
+(select (-get-random-comics-ua "http://codingrockets.com") [:img])
+(-> (select (-get-random-comics-ua "http://codingrockets.com") [:img]) :attrs :src)
+(-> (select (-get-random-comics-ua "http://codingrockets.com") [:img]) :attrs)
+(select (-get-random-comics-ua "http://codingrockets.com") [:img]))
+(select (-get-random-comics-ua "http://codingrockets.com") [:img])))
+(select (-get-random-comics-ua "http://codingrockets.com") [:img])
+(def res (select (-get-random-comics-ua "http://codingrockets.com") [:img]))
+res
+(first res)
+(-> (first res) :attrs :src)

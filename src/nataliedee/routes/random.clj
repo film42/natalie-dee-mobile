@@ -22,13 +22,10 @@
 (defn nd-template []
   (let [images (vec (get-random-comics))]
     (for [i (range (count images))]
-      (image (-> (images i) :attrs :src)))))
-
-(defn add-proxy [x]
-  (str "http://imageproxy.heroku.com/convert?source=" x))
+      (image (str "http://imageproxy.heroku.com/convert?source=" (-> (images i) :attrs :src))))))
 
 (defn random []
-  (layout/template [:div (-get-random-comics-ua)] (unordered-list (map add-proxy (nd-template)))))
+  (layout/template [:div (-get-random-comics-ua)] (unordered-list (nd-template))))
 
 (defroutes random-routes
   (GET "/random" [] (random)))
